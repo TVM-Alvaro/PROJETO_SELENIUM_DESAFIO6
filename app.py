@@ -47,19 +47,16 @@ sleep(3)
 #rolar a pagina até o desafio 6
 driver.execute_script("window.scrollTo(0, 2100);")
 sleep(1)
-#marcar o checkbox carro 2, carro 4 e carro 5.
-'''checkbox_carro = driver.find_elements(By.XPATH,"//input[@name='carros']")
+# encontrar o dropbox 
+paises_dropdown = driver.find_element(By.XPATH, "//select[@id='paisesselect']")
+opcoes = Select(paises_dropdown)
+#selecionar estados unidos, africa e chile.
+opcoes.select_by_index(2)
 sleep(1)
-checkbox_carro[1].click()
-checkbox_carro[3].click()
-checkbox_carro[4].click()
+opcoes.select_by_index(4)
 sleep(1)
-checkbox_motos = driver.find_elements(By.XPATH,"//input[@name='motos']")
-for moto in checkbox_motos:
-    moto.click()
-    sleep(0.5)
-sleep(1)'''
-#marcar todos checkbox motos
+opcoes.select_by_index(6)
+sleep(1)
 
 input('')
 driver.close()
